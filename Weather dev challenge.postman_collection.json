@@ -1,0 +1,864 @@
+{
+	"info": {
+		"_postman_id": "022455ac-b8ec-427a-a989-4d9ece9afe72",
+		"name": "Weather dev challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Current weather data",
+			"description": null,
+			"item": [
+				{
+					"name": "Negative",
+					"description": null,
+					"item": [
+						{
+							"name": "By city name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffab247e-64bf-4c0b-9149-715d54cc69d4",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?q=noname&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "noname"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "a) check that API responds with a list of results that match a searching word (city name);"
+							},
+							"response": []
+						},
+						{
+							"name": "By ID with negative ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c77f3a3d-a562-48f5-844f-21e9bb4d1a24",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?id=undefined&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "undefined"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "a) check that API responds with a list of results that match a searching value (city ID);"
+							},
+							"response": []
+						},
+						{
+							"name": "By city name with unexisting mode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6d505719-85d0-43f1-9213-be6bb59d890f",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=ca81605140775ba22d6ca4010097ba5b&mode=undefined",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "Kyiv"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										},
+										{
+											"key": "mode",
+											"value": "undefined"
+										}
+									]
+								},
+								"description": "a) check that API responds with a list of results in unexisting mode;"
+							},
+							"response": []
+						},
+						{
+							"name": "By city name and country code with unexisting units",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c8132df4-16f6-4553-a731-5e5a31e2516d",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?q=nocity,nocountry&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "nocity,nocountry"
+										},
+										{
+											"key": "mode",
+											"value": "xml"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "b) check that API responds with a list of results that match a searching words (city name\r\nand country code);"
+							},
+							"response": []
+						},
+						{
+							"name": "By city name and country code with unexisting country",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "320a0523-f7a4-4be9-98a7-9c66d7fc6581",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?q=Kyiv,nocountry&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "Kyiv,nocountry"
+										},
+										{
+											"key": "mode",
+											"value": "xml"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "b) check that API responds with a list of results that match a searching words (city name\r\nand country code);"
+							},
+							"response": []
+						},
+						{
+							"name": "Two city IDs with metric units (witn one negative ID)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4a0e5784-94a9-485e-b53c-c68d0be2427c",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is application/json;\", function () {",
+											"    pm.response.to.be.header(\"Content-Type\", \"application/json; charset=utf-8\");",
+											"});",
+											"",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"By two city IDs\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.message).to.eql(\"undefined is not a city id\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://api.openweathermap.org/data/2.5/group?id=3143244,undefined&units=metric&appid=ca81605140775ba22d6ca4010097ba5b",
+									"protocol": "http",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"group"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3143244,undefined"
+										},
+										{
+											"key": "units",
+											"value": "metric"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "By geographic coordinates with one negative coordinate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a4e66970-1f5e-420c-858f-7c88870627c4",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is application/json;\", function () {",
+											"    pm.response.to.be.header(\"Content-Type\", \"application/json; charset=utf-8\");",
+											"});",
+											"",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"By geographic coordinates\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.message).to.eql(\"undefined is not a float\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://api.openweathermap.org/data/2.5/weather?lat=50.43&lon=undefined&appid=ca81605140775ba22d6ca4010097ba5b",
+									"protocol": "http",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "lat",
+											"value": "50.43"
+										},
+										{
+											"key": "lon",
+											"value": "undefined"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "By geographic coordinates with unexisting coordinates",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0cdf69a7-4a1e-44f2-84a5-7b894c777fc5",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is application/json;\", function () {",
+											"    pm.response.to.be.header(\"Content-Type\", \"application/json; charset=utf-8\");",
+											"});",
+											"",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"By geographic coordinates\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.message).to.eql(\"4053 is not a float\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://api.openweathermap.org/data/2.5/weather?lat=4053&lon=12309845&appid=ca81605140775ba22d6ca4010097ba5b",
+									"protocol": "http",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "lat",
+											"value": "4053"
+										},
+										{
+											"key": "lon",
+											"value": "12309845"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "By ID with unexisting ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d78a098e-ac58-45ec-bd69-04d0003fc53e",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is application/json;\", function () {",
+											"    pm.response.to.be.header(\"Content-Type\", \"application/json; charset=utf-8\");",
+											"});",
+											"",
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});",
+											"",
+											"pm.test(\"By unexisting ID\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.message).to.eql(\"city not found\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?id=707861&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "707861"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "a) check that API responds with a list of results that match a searching value (city ID);"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Positive",
+					"description": null,
+					"item": [
+						{
+							"name": "By city name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "Kyiv"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "a) check that API responds with a list of results that match a searching word (city name);"
+							},
+							"response": []
+						},
+						{
+							"name": "Two city IDs with metric units",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "573d3b1e-63bd-4731-a579-d046ea676a8c",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://api.openweathermap.org/data/2.5/group?id=3143244,703448&units=metric&appid=ca81605140775ba22d6ca4010097ba5b",
+									"protocol": "http",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"group"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3143244,703448"
+										},
+										{
+											"key": "units",
+											"value": "metric"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "By city name and country code (xml)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ffa4766e-8be1-459a-99db-4082351d1735",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?q=Odessa,ua&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "Odessa,ua"
+										},
+										{
+											"key": "mode",
+											"value": "xml"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "b) check that API responds with a list of results that match a searching words (city name\r\nand country code);"
+							},
+							"response": []
+						},
+						{
+							"name": "By zip code (html)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b3b66184-c645-4fcf-8cba-50e71cc84352",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is text/html;\", function () {",
+											"    pm.response.to.be.header(\"Content-Type\", \"text/html; charset=utf-8\");",
+											"});",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?q=10055,us&mode=html&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "10055,us"
+										},
+										{
+											"key": "mode",
+											"value": "html"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "b) check that API responds with a list of results that match a searching words (city name\r\nand country code);"
+							},
+							"response": []
+						},
+						{
+							"name": "By geographic coordinates",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "07fd2a5b-1850-4f82-b007-161a5506c1ba",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"City name check\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.name).to.eql(\"Misto Kyyiv\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://api.openweathermap.org/data/2.5/weather?lat=50.43&lon=30.52&appid=ca81605140775ba22d6ca4010097ba5b",
+									"protocol": "http",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "lat",
+											"value": "50.43"
+										},
+										{
+											"key": "lon",
+											"value": "30.52"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "By ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "00378a73-df93-49ef-b948-f1f6f43cba73",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Content-Type is present\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"});",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"ID check\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.id).to.eql(707860);",
+											"});",
+											"",
+											"pm.test(\"Name check\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.name).to.eql(\"Hurzuf\");",
+											"});"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "api.openweathermap.org/data/2.5/weather?id=707860&appid=ca81605140775ba22d6ca4010097ba5b",
+									"host": [
+										"api",
+										"openweathermap",
+										"org"
+									],
+									"path": [
+										"data",
+										"2.5",
+										"weather"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "707860"
+										},
+										{
+											"key": "appid",
+											"value": "ca81605140775ba22d6ca4010097ba5b"
+										}
+									]
+								},
+								"description": "a) check that API responds with a list of results that match a searching value (city ID);"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
