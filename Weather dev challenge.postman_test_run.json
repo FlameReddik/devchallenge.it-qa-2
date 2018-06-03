@@ -1,0 +1,992 @@
+{
+	"id": "592f8d2c-15ef-4104-aca9-abd52a28cdc5",
+	"name": "Weather dev challenge",
+	"allTests": [],
+	"timestamp": "2018-06-03T20:31:05.689Z",
+	"collection_id": "022455ac-b8ec-427a-a989-4d9ece9afe72",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "022455ac-b8ec-427a-a989-4d9ece9afe72",
+		"name": "Weather dev challenge",
+		"description": null,
+		"auth": null,
+		"events": null,
+		"variables": null,
+		"order": [],
+		"folders_order": [
+			"82444f12-5200-4914-80ad-88e8691cf945"
+		],
+		"owner": "4351617",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "By city name",
+			"id": "cf736181-ae7e-41a2-ac03-823f3cdfa6d6",
+			"url": "api.openweathermap.org/data/2.5/weather?q=noname&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"136"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true
+				}
+			],
+			"time": "136",
+			"totalRequestTime": "136",
+			"iterationResults": {}
+		},
+		{
+			"name": "By ID with negative ID",
+			"id": "cfd4bd6d-cb1a-4aff-a2dd-98edee117d8d",
+			"url": "api.openweathermap.org/data/2.5/weather?id=undefined&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"50"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true
+				}
+			],
+			"time": "50",
+			"totalRequestTime": "50",
+			"iterationResults": {}
+		},
+		{
+			"name": "By city name with unexisting mode",
+			"id": "75c9fed7-b4b6-4687-8710-0daab4df94c5",
+			"url": "api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=ca81605140775ba22d6ca4010097ba5b&mode=undefined",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"59"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true
+				}
+			],
+			"time": "59",
+			"totalRequestTime": "59",
+			"iterationResults": {}
+		},
+		{
+			"name": "By city name and country code with unexisting units",
+			"id": "07c12546-f385-4ee5-ae40-c33bc74d5f1d",
+			"url": "api.openweathermap.org/data/2.5/weather?q=nocity,nocountry&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"64"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true
+				}
+			],
+			"time": "64",
+			"totalRequestTime": "64",
+			"iterationResults": {}
+		},
+		{
+			"name": "By city name and country code with unexisting country",
+			"id": "ca180357-e74b-40d7-a01c-c1eb309f1b07",
+			"url": "api.openweathermap.org/data/2.5/weather?q=Kyiv,nocountry&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"81"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true
+				}
+			],
+			"time": "81",
+			"totalRequestTime": "81",
+			"iterationResults": {}
+		},
+		{
+			"name": "Two city IDs with metric units (witn one negative ID)",
+			"id": "163159c3-6eef-4823-b8ea-44ea80cfc295",
+			"url": "http://api.openweathermap.org/data/2.5/group?id=3143244,undefined&units=metric&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is application/json;",
+				"status": "pass",
+				"Status code is 400": true,
+				"By two city IDs": true
+			},
+			"testPassFailCounts": {
+				"Content-Type is application/json;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"By two city IDs": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"50"
+			],
+			"allTests": [
+				{
+					"Content-Type is application/json;": true,
+					"Status code is 400": true,
+					"By two city IDs": true
+				}
+			],
+			"time": "50",
+			"totalRequestTime": "50",
+			"iterationResults": {}
+		},
+		{
+			"name": "By geographic coordinates with one negative coordinate",
+			"id": "9102dfba-63df-4aad-b69a-6b77cdd2b20f",
+			"url": "http://api.openweathermap.org/data/2.5/weather?lat=50.43&lon=undefined&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is application/json;",
+				"status": "pass",
+				"Status code is 400": true,
+				"By geographic coordinates": true
+			},
+			"testPassFailCounts": {
+				"Content-Type is application/json;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"By geographic coordinates": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"54"
+			],
+			"allTests": [
+				{
+					"Content-Type is application/json;": true,
+					"Status code is 400": true,
+					"By geographic coordinates": true
+				}
+			],
+			"time": "54",
+			"totalRequestTime": "54",
+			"iterationResults": {}
+		},
+		{
+			"name": "By geographic coordinates with unexisting coordinates",
+			"id": "8b4b3ded-2e72-4620-822c-5d85afad699a",
+			"url": "http://api.openweathermap.org/data/2.5/weather?lat=4053&lon=12309845&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is application/json;",
+				"status": "pass",
+				"Status code is 400": true,
+				"By geographic coordinates": true
+			},
+			"testPassFailCounts": {
+				"Content-Type is application/json;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"By geographic coordinates": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"69"
+			],
+			"allTests": [
+				{
+					"Content-Type is application/json;": true,
+					"Status code is 400": true,
+					"By geographic coordinates": true
+				}
+			],
+			"time": "69",
+			"totalRequestTime": "69",
+			"iterationResults": {}
+		},
+		{
+			"name": "By ID with unexisting ID",
+			"id": "5b8816c3-064c-474a-ad29-bcca3813ed36",
+			"url": "api.openweathermap.org/data/2.5/weather?id=707861&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is application/json;",
+				"status": "pass",
+				"Status code is 404": true,
+				"By unexisting ID": true
+			},
+			"testPassFailCounts": {
+				"Content-Type is application/json;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"By unexisting ID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"54"
+			],
+			"allTests": [
+				{
+					"Content-Type is application/json;": true,
+					"Status code is 404": true,
+					"By unexisting ID": true
+				}
+			],
+			"time": "54",
+			"totalRequestTime": "54",
+			"iterationResults": {}
+		},
+		{
+			"name": "By city name",
+			"id": "72e3653d-8dce-46a4-93a1-19ed046dafa7",
+			"url": "api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"59"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "59",
+			"totalRequestTime": "59",
+			"iterationResults": {}
+		},
+		{
+			"name": "Two city IDs with metric units",
+			"id": "5bc1f7cd-5c2b-489f-a3ec-3b3dddf74d28",
+			"url": "http://api.openweathermap.org/data/2.5/group?id=3143244,703448&units=metric&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"52"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true
+				}
+			],
+			"time": "52",
+			"totalRequestTime": "52",
+			"iterationResults": {}
+		},
+		{
+			"name": "By city name and country code (xml)",
+			"id": "77ddb5ad-fa77-49e6-a6b8-267c0f7aa873",
+			"url": "api.openweathermap.org/data/2.5/weather?q=Odessa,ua&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"63"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true
+				}
+			],
+			"time": "63",
+			"totalRequestTime": "63",
+			"iterationResults": {}
+		},
+		{
+			"name": "By zip code (html)",
+			"id": "cabb619f-a698-4bbc-a3cf-791230bb0e31",
+			"url": "api.openweathermap.org/data/2.5/weather?q=10055,us&mode=html&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is text/html;",
+				"status": "pass",
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Content-Type is text/html;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"204"
+			],
+			"allTests": [
+				{
+					"Content-Type is text/html;": true,
+					"Status code is 200": true
+				}
+			],
+			"time": "204",
+			"totalRequestTime": "204",
+			"iterationResults": {}
+		},
+		{
+			"name": "By geographic coordinates",
+			"id": "7b9a332a-471b-4115-a810-798d3774a2ef",
+			"url": "http://api.openweathermap.org/data/2.5/weather?lat=50.43&lon=30.52&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass",
+				"Status code is 200": true,
+				"City name check": true
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"City name check": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"399"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true,
+					"Status code is 200": true,
+					"City name check": true
+				}
+			],
+			"time": "399",
+			"totalRequestTime": "399",
+			"iterationResults": {}
+		},
+		{
+			"name": "By ID",
+			"id": "7580dd6f-34cc-4cc5-8204-5f200f81358f",
+			"url": "api.openweathermap.org/data/2.5/weather?id=707860&appid=ca81605140775ba22d6ca4010097ba5b",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Content-Type is present",
+				"status": "pass",
+				"Status code is 200": true,
+				"ID check": true,
+				"Name check": true
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"ID check": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name check": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"71"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true,
+					"Status code is 200": true,
+					"ID check": true,
+					"Name check": true
+				}
+			],
+			"time": "71",
+			"totalRequestTime": "71",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 28,
+	"totalFail": 0,
+	"totalTime": 1465,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "By city name",
+			"id": "cf736181-ae7e-41a2-ac03-823f3cdfa6d6",
+			"url": "api.openweathermap.org/data/2.5/weather?q=noname&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By ID with negative ID",
+			"id": "cfd4bd6d-cb1a-4aff-a2dd-98edee117d8d",
+			"url": "api.openweathermap.org/data/2.5/weather?id=undefined&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By city name with unexisting mode",
+			"id": "75c9fed7-b4b6-4687-8710-0daab4df94c5",
+			"url": "api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=ca81605140775ba22d6ca4010097ba5b&mode=undefined",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By city name and country code with unexisting units",
+			"id": "07c12546-f385-4ee5-ae40-c33bc74d5f1d",
+			"url": "api.openweathermap.org/data/2.5/weather?q=nocity,nocountry&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By city name and country code with unexisting country",
+			"id": "ca180357-e74b-40d7-a01c-c1eb309f1b07",
+			"url": "api.openweathermap.org/data/2.5/weather?q=Kyiv,nocountry&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Two city IDs with metric units (witn one negative ID)",
+			"id": "163159c3-6eef-4823-b8ea-44ea80cfc295",
+			"url": "http://api.openweathermap.org/data/2.5/group?id=3143244,undefined&units=metric&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is application/json;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"By two city IDs": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By geographic coordinates with one negative coordinate",
+			"id": "9102dfba-63df-4aad-b69a-6b77cdd2b20f",
+			"url": "http://api.openweathermap.org/data/2.5/weather?lat=50.43&lon=undefined&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is application/json;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"By geographic coordinates": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By geographic coordinates with unexisting coordinates",
+			"id": "8b4b3ded-2e72-4620-822c-5d85afad699a",
+			"url": "http://api.openweathermap.org/data/2.5/weather?lat=4053&lon=12309845&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is application/json;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"By geographic coordinates": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By ID with unexisting ID",
+			"id": "5b8816c3-064c-474a-ad29-bcca3813ed36",
+			"url": "api.openweathermap.org/data/2.5/weather?id=707861&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is application/json;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"By unexisting ID": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By city name",
+			"id": "72e3653d-8dce-46a4-93a1-19ed046dafa7",
+			"url": "api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Two city IDs with metric units",
+			"id": "5bc1f7cd-5c2b-489f-a3ec-3b3dddf74d28",
+			"url": "http://api.openweathermap.org/data/2.5/group?id=3143244,703448&units=metric&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By city name and country code (xml)",
+			"id": "77ddb5ad-fa77-49e6-a6b8-267c0f7aa873",
+			"url": "api.openweathermap.org/data/2.5/weather?q=Odessa,ua&mode=xml&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By zip code (html)",
+			"id": "cabb619f-a698-4bbc-a3cf-791230bb0e31",
+			"url": "api.openweathermap.org/data/2.5/weather?q=10055,us&mode=html&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is text/html;": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By geographic coordinates",
+			"id": "7b9a332a-471b-4115-a810-798d3774a2ef",
+			"url": "http://api.openweathermap.org/data/2.5/weather?lat=50.43&lon=30.52&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"City name check": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "By ID",
+			"id": "7580dd6f-34cc-4cc5-8204-5f200f81358f",
+			"url": "api.openweathermap.org/data/2.5/weather?id=707860&appid=ca81605140775ba22d6ca4010097ba5b",
+			"time": "2018-06-03T20:31:05.689Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"ID check": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name check": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
